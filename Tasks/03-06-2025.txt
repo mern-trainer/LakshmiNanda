@@ -1,0 +1,25 @@
+Tasks for E-commerce Product Features:
+
+1. Product Listing Page
+- Create a new page component to display products
+- Import product data from constants/products.js (check folder)
+- Implement grid/list view of products with images, names, prices
+- Add styling for product cards and layout
+
+2. Shopping Cart Implementation
+- Create addToCart functionality
+- Implement localStorage sync for cart data persistence
+- Add "Add to Cart" buttons on product cards
+- Show cart count in header/navigation
+
+3. Cart Page Development
+- Create dedicated cart page component
+- Display all added products with details
+- Show quantity controls and total price
+- Add remove item functionality
+- Implement checkout button
+- Style cart page
+
+Additional Requirements:
+- Ensure responsive design
+- Handle edge cases (empty cart, errors)
