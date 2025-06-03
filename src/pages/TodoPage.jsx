@@ -41,14 +41,15 @@ const TodoPage = () => {
     }
 
     return <div className="d-flex justify-content-center mt-2">
-        <Stack gap={2} className="mt-2 w-100" style={{ maxWidth: "500px" }}>
-            <input onChange={handleChange} value={task} type="text" className="p-2" />
+        <Stack gap={1} className="mt-2 w-100 px-2" style={{ maxWidth: "500px" }}>
+            <label htmlFor="task">Enter Todo:</label>
+            <input id="task" placeholder="Example: Buy groceries" onChange={handleChange} value={task} type="text" className="p-2 rounded outline-none border border-2" />
             <span>{errMessage}</span>
             <Button onClick={handleAddTask} variant="secondary">Add Task</Button>
 
             <Stack gap={2}>
                 {
-                    todos.map((todo) => {
+                    todos.length > 0 ? todos.map((todo) => {
                         return <div key={todo.id} className="border d-flex align-items-center w-100 p-2 justify-content-between border-2 border-secondary rounded">
                             <div>
                                 <div>Task: {todo.task}</div>
@@ -58,7 +59,7 @@ const TodoPage = () => {
                                 <Button onClick={() => handleDeleteTodo(todo.id)} variant="danger" size="sm">Delete</Button>
                             </div>
                         </div>
-                    })
+                    }) : <div className="text-center mt-3">No Tasks Available</div>
                 }
             </Stack>
         </Stack>
